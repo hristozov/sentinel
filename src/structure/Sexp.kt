@@ -1,5 +1,5 @@
 package structure
 
-trait Node {
+trait Sexp : Node {
 
 }

@@ -1,5 +1,5 @@
 package structure
 
-class Atom {
+trait Atom : Node {
 
 }

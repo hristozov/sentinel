@@ -1,6 +1,5 @@
-import parser.Parser
-import parser.ParserImpl
+import parser.RecursiveDescentParser
 
 fun main(args: Array<String>) {
-    ParserImpl().parse("()");
+    RecursiveDescentParser().parse("()");
 }
