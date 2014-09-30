@@ -8,10 +8,10 @@ import structure.atomic.functional.numeric.Integral
 
 class Macho64Generator : Generator {
     override fun generate(program: Array<Sexp>): String {
-        var header = """.globl start
+        val header = """.globl start
 start:""";
-        var intermediate = visit(program[0]);
-        var footer = """
+        val intermediate = visit(program[0]);
+        val footer = """
     movl %ebx, %edi
     movl $0x2000001, %eax
     syscall"""
@@ -21,9 +21,9 @@ start:""";
     private fun visit(sexp : Sexp) : String {
         return when (sexp) {
             is PlusExpression -> {
-                var plusExpression = sexp as PlusExpression
-                var op1 = (plusExpression.rest()[0] as Integral).content
-                var op2 = (plusExpression.rest()[1] as Integral).content
+                val plusExpression = sexp as PlusExpression
+                val op1 = (plusExpression.rest()[0] as Integral).content
+                val op2 = (plusExpression.rest()[1] as Integral).content
 
                 return """
     mov $${op1}, %ax
