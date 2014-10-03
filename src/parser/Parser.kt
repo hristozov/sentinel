@@ -1,7 +1,8 @@
 package parser
 
 import structure.composite.Sexp
+import parser.tokenizer.Tokenizer
 
 trait Parser {
-    fun parse(contents:String) : Array<Sexp>
+    fun parse(tokenizer: Tokenizer): Array<Sexp>
 }

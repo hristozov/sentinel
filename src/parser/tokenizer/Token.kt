@@ -1,5 +1,5 @@
 package parser.tokenizer
 
-/**
- * Created by gh on 10/3/14.
- */
+data class Token(val token: Char) {
+
+}
