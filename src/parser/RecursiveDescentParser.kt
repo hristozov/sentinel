@@ -35,12 +35,7 @@ class RecursiveDescentParser : Parser {
     }
 
     private fun digit(token: Token): Integral? {
-        val regex = "(0-9){1}".toRegex()
-        val matcher = regex.matcher(token.token);
-        if (matcher.matches()) {
-            return Integral(token.token.toInt());
-        }
-        return null;
+        return Integral(token.token.toString().toInt());
     }
 
     private fun plusOperation(input: Tokenizer): Sexp? {
